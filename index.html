@@ -11,14 +11,18 @@
             height: 100%;
             overflow: hidden;
         }
-        iframe {
+        #pdf-viewer {
             width: 100%;
             height: 100vh;
-            border: none; 
+            border: none;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js"></script>
 </head>
 <body>
-    <iframe src="catalogo.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
+    <div id="pdf-viewer"></div>
+    <script>
+        PDFObject.embed("https://drive.google.com/file/d/1O5zDSnVJz3t7S18LaPjqX3D5Fuc97jyj/preview", "#pdf-viewer");
+    </script>
 </body>
 </html>
