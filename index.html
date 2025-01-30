@@ -9,18 +9,57 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #f8f8f8;
         }
         iframe {
-            width: 100%;
-            height: 100vh; 
-            border: none; 
+            width: 90%;
+            height: 95vh;
+            border: none;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        #download-btn {
+            display: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #download-btn:hover {
+            background-color: #e60073;
         }
     </style>
 </head>
 <body>
-    <iframe src="San Valentin Catalogo.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
+    <iframe id="pdf-viewer" src="San Valentin Catalogo.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
+    <button id="download-btn">Descargar Catálogo</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const pdfViewer = document.getElementById("pdf-viewer");
+            const downloadBtn = document.getElementById("download-btn");
+            const pdfUrl = "San Valentin Catalogo.pdf";
+
+            if (isIOS) {
+                // Oculta el iframe y muestra el botón de descarga
+                pdfViewer.style.display = "none";
+                downloadBtn.style.display = "block";
+
+                // Al hacer clic en el botón, se descarga el PDF
+                downloadBtn.addEventListener("click", function () {
+                    window.location.href = pdfUrl;
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-
-
