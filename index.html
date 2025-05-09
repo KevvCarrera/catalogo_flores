@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Florecitas</title>
+    <!-- ico -->
+    <link rel="shortcut icon" href="assets/logo.png" />
+
+    <title>Catálogo día de la madre</title>
     <style>
         body, html {
             margin: 0;
@@ -39,7 +42,7 @@
     </style>
 </head>
 <body>
-    <iframe id="pdf-viewer" src="San Valentin Catalogo.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
+    <iframe id="pdf-viewer" src="assets/Catálogo Mamá Amelis.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"></iframe>
     <button id="download-btn">Descargar Catálogo</button>
 
     <script>
@@ -47,7 +50,7 @@
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             const pdfViewer = document.getElementById("pdf-viewer");
             const downloadBtn = document.getElementById("download-btn");
-            const pdfUrl = "San Valentin Catalogo.pdf";
+            const pdfUrl = "Catálogo Mamá Amelis.pdf";
 
             if (isIOS) {
                 // Oculta el iframe y muestra el botón de descarga
